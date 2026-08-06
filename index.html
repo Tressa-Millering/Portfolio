@@ -296,7 +296,7 @@
             Projects
         </h1>
         <p class="section-subtitle">
-            Click a project for more information!
+            These cards only give a summary;<br>click one for more information!
         </p>
         <div class="proj-card-deck">
 
@@ -401,7 +401,7 @@
                                 Lexicographical Analyzer
                             </span>
                             <span class="proj-card-description">
-                                A basic lexicographical analyzer built in C++.
+                                A lexicographical analyzer built in C++.
                             </span>
                         </span>
                     </span>
@@ -415,21 +415,9 @@
                                 <span>C++</span>
                             </span>
                             <span class="proj-card-description">
-                                This is a basic lexicographical analyzer built in C++. It takes a file as input and breaks the file down into the following token types:
-
-                                Identifiers
-                                Keywords
-                                Integer Literals
-                                Float Literals
-                                String Literals
-                                Operators
-                                Delimiters
-
-                                It also handles the end of the file and errors via the tokens:
-
-                                End of File
-                                Error
-
+                                This is a lexicographical analyzer built in C++.
+                                It takes a text file as input and breaks the file down into
+                                the tokens, outputting as shown in the picture below.
 
                                 <img class="proj-card-img-back" src="assets/projects/lexer/LexicoSS.png" alt="Lexer Example"/>
 
@@ -1011,24 +999,59 @@
         <span>C++</span>
     </div>
 
-    <div class="proj-card-description">
-        This is a basic lexicographical analyzer built in C++. It takes a file as input and breaks the file down into the following token types:
+    <div class="modal-text">
+        This is a lexicographical analyzer built in C++.
+        This coming semester I will be expanding it
+        into a full compiler for a C based language.
+        It takes a text file as input and breaks it down
+        into the following tokens:
         <br>
-        Identifiers <br>
-        Keywords <br>
-        Integer Literals <br>
-        Float Literals <br>
-        String Literals <br>
-        Operators <br>
-        Delimiters <br>
+        <b><ul>
+            <li>Identifiers</li>
+            <li>Keywords</li>
+            <li>Integer Literals</li>
+            <li>Float Literals</li>
+            <li>String Literals</li>
+            <li>Operators</li>
+            <li>Delimiters</li>
+        </ul></b>
 
-        It also handles the end of the file and errors via the tokens:
+        It also handles the end of the file and errors via their own tokens.
+        <img class="modal-img" src="assets/projects/lexer/LexicoSS.png" alt="Lexer Example 1"/>
 
-        End of File
-        Error
-        <img class="proj-card-img-back" src="assets/projects/lexer/LexicoSS.png" alt="Lexer Example 1"/>
+        Output displays the line/column of the first character in the token,
+        the token type, the characters that make up the token, and finally
+        the value of the token when applicable.
+        <br><br>
+        The following errors are supported:
+        <ul>
+            <li>
+                <b>Illegal Symbols:</b> Unrecognized symbols and escape characters
+                                        throw an error at the location of the character,
+                                        with the message "Cannot resolve symbol ___".
+                                        This is also thrown by characters that are legal
+                                        on their own but not together, such as invalid
+                                        escape characters and invalid operators.
 
-        <span>
+            </li>
+            <li>
+                <b>Unterminated String:</b> A string that isn't properly wrapped in quotation
+                                            marks will throw an error. Multiline strings are
+                                            accepted.
+            </li>
+            <li>
+                <b>Unterminated Comment:</b> Single line and multiline comments are accepted
+                                             using C++ style syntax. An unterminated multiline
+                                             comment throws an error.
+            </li>
+            <li>
+                <b>Malformed Floating Point Literal:</b> Floating point numbers such as
+                                                        <em>1..5, .5.2, .4.,</em> and <em>.</em>
+                                                        throw an error.
+            </li>
+        </ul>
+        A full list of legal keywords, operators, escape characters, etc can be found on GitHub.
+        <br><span>
             <em><b>View this project on
             <a href="https://github.com/Tressa-Millering/Lexicographical-Analyzer">
                 GitHub

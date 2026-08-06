@@ -29,7 +29,13 @@
     font-weight: 350;
     font-size: 1.3rem;
     margin: 0 3%;
+
+    & ul, & li {
+        margin: 1% auto;
+        width: fit-content;
+    }
 }
+
 
 .modal-img {
     width: clamp(300px, 90%, 700px);
