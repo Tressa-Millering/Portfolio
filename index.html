@@ -438,7 +438,6 @@
             <!-- Wandering in the Woods  -->
             <button class="proj-card">
                 <span  tabindex="-1" class="proj-card-inner">
-
                     <span  tabindex="-1" class="proj-card-front">
                         <img class="proj-card-img" src="assets/projects/wandering/Heatmap.png" alt="Wandering in the Woods Thumbnail"/>
                         <span class="proj-card-front-text">
@@ -464,27 +463,13 @@
                                 <span>MatPlotLib</span>
                             </span>
                             <span class="proj-card-description">
-                                The program first takes validated inputs for
-                                N (grid size, NxN), T (ticks per simulation),
-                                and R (number of simulations).
-                                It then runs R simulations. This entails simulating
-                                a grid with two people starting on opposite ends,
-                                each moving in a random direction each tick. If they
-                                were to move off the grid, they simply don't move
-                                at all. The simulation ends when, after moving, the
-                                two people are at the same grid location; alternatively,
-                                it will end when this loop has iterated T times
-                                without a meeting. Each simulation that ends in a
-                                meeting records how many ticks it took to get there
-                                and the coordinates of the meeting location.
-                                Finally, the program writes the maximum, minimum,
-                                and mean number of ticks over all simulations, a
-                                histogram of ticks per simulation, and a heat map
-                                of meeting locations. These results are then saved
-                                to a timestamped output file.
+                                This program runs a simulation of two people
+                                walking randomly in the woods until they meet,
+                                collecting data on their movements as they go and
+                                providing a statistical analysis on their movements
+                                at the end.
 
                                 <img class="proj-card-img-back" src="/assets/projects/wandering/Heatmap.png" alt="Wandering in the Woods Example 1"/>
-                                <img class="proj-card-img-back" src="assets/projects/wandering/Histogram.png" alt="Wandering in the Woods Example 2"/>
 
                                 <span>
                                 View this project on
