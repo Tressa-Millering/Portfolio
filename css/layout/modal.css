@@ -34,6 +34,10 @@
         margin: 1% auto;
         width: fit-content;
     }
+
+    & span:last-child {
+        color: green;
+    }
 }
 
 
