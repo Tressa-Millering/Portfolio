@@ -2,17 +2,11 @@
     position: fixed;
     right: 2%;
     bottom: 3%;
-
     height: 50px;
     width: 50px;
-
     background-color: rgba(50,50,50, 0.5);
-
-
     border-radius: 10px;
-
     border: none;
-
     transition: opacity 1s ease, transform 0.2s ease;
 }
 

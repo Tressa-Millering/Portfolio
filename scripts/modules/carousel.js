@@ -1,6 +1,15 @@
 export default function initCarousel() {
-    const carousels = [];
+    //Debouncing function for resizing
+    const debounce = (fn, t) => {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => fn(...args), t)
+        }
+    };
 
+    // Create Carousel Objects
+    const carousels = [];
     document.querySelectorAll('.carousel').forEach((carousel, index) => {
         carousels[index] = {
             content: carousel.children[0],
@@ -14,17 +23,30 @@ export default function initCarousel() {
     })
 
 
-    const debounce = (fn, t) => {
-        let timeout;
-        return (...args) => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => fn(...args), t)
-        }
-    };
+
+    //Update aria-selected attribute for selectors
+    function setSelectors(carousel, selector) {
+        carousel.selectors.forEach((s) => { s.ariaSelected = 'false'; })
+        selector.ariaSelected = (selector.ariaSelected === 'true') ? 'false' : 'true';
+    }
+
+    //Get current carousel image position
+    function getCurrentPosition(carousel, index) {
+        return carousel.content.children[index].offsetLeft;
+    }
+
+    //Update carousel widths on resize
+    function updateWidths(carousel) {
+        carousel.currPos = getCurrentPosition(carousel, carousel.currIndex)
+        carousel.content.style.transform = `translateX(-${carousel.currPos}px)`
+    }
+
+    //Apply resize debounce
     const resizeDebounce = debounce(() => {carousels.forEach(carousel => {updateWidths(carousel)})}, 200);
     window.addEventListener('resize', resizeDebounce)
 
     carousels.forEach((carousel, index) => {
+        //Add functionality to next button
         carousel.nextButton.addEventListener('click', () => {
             carousel.currIndex++;
             if (carousel.currIndex >= carousel.length) {
@@ -35,11 +57,10 @@ export default function initCarousel() {
             }
             setSelectors(carousel, carousel.selectors[carousel.currIndex]);
             carousel.content.style.transform = `translateX(-${carousel.currPos}px)`;
-
         })
 
+        //Add functionality to previous button
         carousel.prevButton.addEventListener('click', () => {
-
             carousel.currIndex--;
             if (carousel.currIndex < 0) {
                 carousel.currIndex = carousel.length - 1;
@@ -49,9 +70,9 @@ export default function initCarousel() {
             }
             setSelectors(carousel, carousel.selectors[carousel.currIndex])
             carousels[index].content.style.transform = `translateX(-${carousels[index].currPos}px)`;
-
         })
 
+        //Add functionality to selector buttons
         carousel.selectors.forEach((selector, index) => {
             selector.addEventListener('click', () => {
                 setSelectors(carousel, selector)
@@ -63,20 +84,7 @@ export default function initCarousel() {
         })
     })
 
-    function setSelectors(carousel, selector) {
-        carousel.selectors.forEach((s) => { s.ariaSelected = 'false'; })
-        selector.ariaSelected = (selector.ariaSelected === 'true') ? 'false' : 'true';
-    }
 
-
-    function getCurrentPosition(carousel, index) {
-        return carousel.content.children[index].offsetLeft;
-    }
-
-    function updateWidths(carousel) {
-        carousel.currPos = getCurrentPosition(carousel, carousel.currIndex)
-        carousel.content.style.transform = `translateX(-${carousel.currPos}px)`
-    }
 
 }
 

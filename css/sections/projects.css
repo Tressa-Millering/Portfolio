@@ -29,7 +29,7 @@
 
 .proj-card {
     all: unset;
-    height: 400px;
+    height: 410px;
     flex-basis: 360px;
     margin: 10px;
     border-radius: 15px;
@@ -115,7 +115,7 @@
 
 .proj-card-front-text {
     width: 100%;
-    margin: 2% 5%;
+    margin: 2% 5% 3% 5%;
     padding-right: 8%;
     text-align: left;
 }
@@ -131,6 +131,11 @@
 .proj-card-description {
     font-family: Lexend, "Ebrima", "Segoe UI", sans-serif;
     font-weight: 350;
+    & span:last-child {
+        color: green;
+        font-weight: bold;
+        font-style: italic;
+    }
 }
 
 .proj-card-keywords {
@@ -147,6 +152,7 @@
     border-radius: 50px;
     margin-right: 2px;
 
+    line-height: 30px;
     padding: 0.1rem 0.5rem;
 
 
