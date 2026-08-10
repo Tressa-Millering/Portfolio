@@ -9,7 +9,6 @@
 
     color: Black;
     font-family: Ebrima,Verdana, "Segoe UI", sans-serif;
-
 }
 
 .about-wrap {
@@ -17,8 +16,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
-
 }
 
 
@@ -38,13 +35,12 @@
     box-shadow: inset 0 0 50px black;
     border: 0.5vw solid darkgoldenrod;
 }
+
 .indoor-headshot {
     max-width: 50%;
     border-radius: 50%;
     margin: auto;
 }
-
-
 
 .about-content {
     display: flex;
@@ -73,7 +69,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
 }
 
 .about-links * {
@@ -93,18 +88,24 @@
 
 .about-links button:hover {
     filter: invert(100%);
+    border: white solid;
+
 }
 
 .linkedin-button {
     background-image: url(../../assets/symbols/linkedin-logo.svg);
     background-color: white;
     background-size: 32px;
+    border: black solid;
+
 }
 
 .github-button {
     background-image: url(../../assets/symbols/github-logo.svg);
     background-color: black;
     background-size: 65px;
+    border: black solid;
+
 }
 
 .about-content * {

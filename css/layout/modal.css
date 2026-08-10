@@ -4,7 +4,7 @@
     top: -75%;
     opacity: 0;
     transition: opacity 0.5s ease,
-    top 0.5s ease;
+                top 0.5s ease;
 
     position: fixed;
     z-index: 10;
@@ -34,6 +34,12 @@
         margin: 1% auto;
         width: fit-content;
     }
+
+    & span:last-child {
+        color: green;
+        font-weight: bold;
+        font-style: italic;
+    }
 }
 
 
@@ -54,7 +60,7 @@
 
 .modal-img-collection img {
     width: auto;
-    height: 30vw;
+    height: 25vw;
     margin: 3% 1%;
 }
 
@@ -108,6 +114,21 @@
 @media(max-width: 600px) {
     .modal .proj-card-title-back {
         margin-top: 70px;
+    }
+
+    .modal-img-collection {
+        flex-direction: column;
+        & * {
+            width: 90% !important;
+            height: auto !important;
+            margin: 20px auto !important;
+        }
+    }
+
+    .modal-img {
+        width: 90% !important;
+        height: auto !important;
+        margin: 20px auto !important;
     }
 }
 

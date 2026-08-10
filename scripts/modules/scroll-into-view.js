@@ -1,6 +1,7 @@
 export default function initScrollIntoView () {
     const items = document.querySelectorAll(".exp-content");
 
+    //Scroll experiences into view, fade them out when not centered
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {

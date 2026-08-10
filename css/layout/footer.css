@@ -8,8 +8,6 @@
 
     justify-content: center;
     align-items: center;
-
-
 }
 
 .footer > div {
@@ -29,6 +27,7 @@
     min-width: 9vh;
     max-width: 9vh;
 }
+
 
 .footer.spread.linkedin-button {
     background-size: 60%;

@@ -54,16 +54,13 @@
 
 .exp-item.is-active {
     opacity: 1;
-
 }
 
 
 
 .exp-content {
-
     box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.7),
                 inset 0 0 5px #777777;
-
 
     position: relative;
 
