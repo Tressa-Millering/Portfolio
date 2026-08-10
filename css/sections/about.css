@@ -85,6 +85,10 @@
     transition: 0.25s ease-in-out;
 }
 
+.about-links button {
+    border: 1px solid black;
+}
+
 
 .about-links button:hover {
     filter: invert(100%);
@@ -96,7 +100,6 @@
     background-image: url(../../assets/symbols/linkedin-logo.svg);
     background-color: white;
     background-size: 32px;
-    border: black solid;
 
 }
 
@@ -104,7 +107,6 @@
     background-image: url(../../assets/symbols/github-logo.svg);
     background-color: black;
     background-size: 65px;
-    border: black solid;
 
 }
 
